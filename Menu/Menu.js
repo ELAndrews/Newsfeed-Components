@@ -12,29 +12,37 @@ let menuItems = [
 function createMenu (arr) {
   const menu = document.createElement('div');
   const options = document.createElement('ul');
+  
 
   menu.append(options);
 
   menu.classList.add('menu');
-  options.classList.add('li');
-
-  options.textContent = arr.forEach(i => {
+  options.classList.add('ul');
+  options.textContent = [];
+  
+  arr.forEach(i => {
     let menuItem = document.createElement('li');
-    menuItem.textContent = arr[i];
-  })
-
+    menuItem.textContent = i;
+    menuItem.classList.add('li')
+    options.append(menuItem);
+  });
+  
   const menuBtn = document.querySelector('.menu-button');
-
+  
+  console.log(menuBtn);
   menuBtn.addEventListener('click', (event) => {
     menu.classList.toggle('menu--open');
   })
-
-
+  
   return menu;
-
+  
 }
 
-createMenu(menuItems);
+const header = document.querySelector('.header');
+
+
+
+header.append(createMenu(menuItems));
 
 
 /* 
