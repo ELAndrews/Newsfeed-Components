@@ -29,7 +29,6 @@ function createMenu (arr) {
   
   const menuBtn = document.querySelector('.menu-button');
   
-  console.log(menuBtn);
   menuBtn.addEventListener('click', (event) => {
     menu.classList.toggle('menu--open');
   })
